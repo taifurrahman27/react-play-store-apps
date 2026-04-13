@@ -4,9 +4,12 @@ import './index.css'
 import { RouterProvider } from 'react-router/dom'
 import { createBrowserRouter } from 'react-router';
 import RootLayout from './layout/RootLayout';
-import Apps from './pages/apps/apps';
 import InstalledApps from './pages/installedApps/InstalledApps';
 import Homepage from './pages/homepage/Homepage';
+import Apps from './pages/apps/apps';
+import AppDetails from './pages/appDetails/AppDetails';
+import InstalledAppsProvider from './context/InstalledAppsProvider';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -27,6 +30,11 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/apps/:id",
+        element: <AppDetails />,
+      },
+
+      {
         path: "/installedApps",
         element: <InstalledApps />
       },
@@ -36,9 +44,11 @@ const router = createBrowserRouter([
 
 ]);
 
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <InstalledAppsProvider>
+      <RouterProvider router={router} />
+    </InstalledAppsProvider>
   </StrictMode>
+
 )
