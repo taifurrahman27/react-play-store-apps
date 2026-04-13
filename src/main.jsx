@@ -3,20 +3,41 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { RouterProvider } from 'react-router/dom'
 import { createBrowserRouter } from 'react-router';
+import RootLayout from './layout/RootLayout';
+import Apps from './pages/apps/apps';
+import InstalledApps from './pages/installedApps/InstalledApps';
+import Homepage from './pages/homepage/Homepage';
 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello World</div>,
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: <Homepage />,
+      },
+
+      {
+        path: "/apps",
+        element: <Apps />
+      },
+
+      {
+        path: "/installedApps",
+        element: <InstalledApps />
+      },
+    ]
+
   },
+
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <h3 className='text-5xl font-bold bg-slate-200 text-center'>Hello World</h3>
-    <RouterProvider router={router} />,
-  </StrictMode>,
+    <RouterProvider router={router} />
+  </StrictMode>
 )
