@@ -4,22 +4,14 @@ import AppCard from "../ui/AppCard";
 import { PropagateLoader } from "react-spinners";
 import { Link } from "react-router";
 import useApps from "../../hooks/useApps";
-// import { useLoaderData } from "react-router";
 
-// const appsPromise = fetch("/data.json").then((res) => res.json());
 
 const TrendingApps = () => {
-    //   const apps = use(appsPromise);
-    //   console.log(apps, "apps");
-
-    //   const data = useLoaderData();
-    //   console.log(data, "data from homepage");
 
     const { apps, loading } = useApps();
 
     return (
         <div className="container mx-auto my-15">
-            {/* Section header */}
             <div className="mb-8 text-center">
                 <h2 className="font-bold text-4xl">Trending apps</h2>
                 <p className="text-gray-600">

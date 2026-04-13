@@ -6,8 +6,6 @@ import AppCard from "../../components/ui/AppCard";
 const Apps = () => {
     const { apps, loading } = useApps();
 
-    console.log(apps, loading);
-
     return (
         <div className="container mx-auto my-10">
             <div className="mb-12 text-center max-w-[50%] mx-auto">

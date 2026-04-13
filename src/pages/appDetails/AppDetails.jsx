@@ -27,8 +27,6 @@ const AppDetails = () => {
         toast.success(`${expectedApp.title} is installed!`);
     };
 
-    console.log(installedApps, "installedApps");
-
     return (
         <div className="container mx-auto ">
             <div className="shadow p-6 space-y-2 text-center">

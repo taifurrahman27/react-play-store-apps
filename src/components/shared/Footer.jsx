@@ -1,10 +1,11 @@
 import React from 'react';
 
+import footerImg from "../../assets/images/Footer.png"
+
 const Footer = () => {
     return (
         <div>
-            <h2>This is footer section.</h2>
-        </div>
+            <img src={footerImg} alt="" />        </div>
     );
 };
 

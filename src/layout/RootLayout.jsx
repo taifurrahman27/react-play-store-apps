@@ -5,13 +5,14 @@ import Footer from '../components/shared/Footer';
 import { ToastContainer } from 'react-toastify';
 
 const RootLayout = () => {
-    <ToastContainer />
 
     return (
         <div>
             <Navbar />
             <Outlet />
             <Footer />
+
+            <ToastContainer />
         </div>
     )
 };

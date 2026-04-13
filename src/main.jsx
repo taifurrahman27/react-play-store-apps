@@ -9,8 +9,8 @@ import Homepage from './pages/homepage/Homepage';
 import Apps from './pages/apps/apps';
 import AppDetails from './pages/appDetails/AppDetails';
 import InstalledAppsProvider from './context/InstalledAppsProvider';
-import { ToastContainer } from 'react-toastify';
-
+import Dashboard from './pages/dashboard/Dashboard';
+import NotFoundPage from './pages/notFoundPage/NotFoundPage';
 
 
 const router = createBrowserRouter([
@@ -38,7 +38,13 @@ const router = createBrowserRouter([
         path: "/installedApps",
         element: <InstalledApps />
       },
-    ]
+      {
+        path: "/dashboard",
+        element: <Dashboard />
+      },
+    ],
+    errorElement: <NotFoundPage />,
+
 
   },
 
